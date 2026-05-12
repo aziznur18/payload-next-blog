@@ -2,7 +2,6 @@ import type { Buffer } from 'node:buffer'
 import { getPlaiceholder } from 'plaiceholder'
 
 export function isEligibleForBlurDataURL(mime?: string | null) {
-    console.log(mime, '<<< MIME')
     if (!mime?.startsWith('image/')) return false
     if (mime === 'image/svg+xml') return false
     return true
