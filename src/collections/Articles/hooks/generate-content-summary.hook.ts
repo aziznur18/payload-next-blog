@@ -1,8 +1,8 @@
 import { Article } from '@/payload-types'
 import { convertLexicalToPlaintext } from '@payloadcms/richtext-lexical/plaintext'
 import { FieldHook } from 'payload'
+import { MAX_SUMMARY_LENGTH } from '../constants'
 
-const MAX_SUMMARY_LENGTH = 160
 export const generateContentSummaryHook: FieldHook<Article, string> = ({ data, value }) => {
     if (value) return value.trim()
     if (!data?.content) return ''
